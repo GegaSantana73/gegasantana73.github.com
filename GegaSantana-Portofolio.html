@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gega Santana - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --navy-blue: #0f172a;
+            --gold: #fbbf24;
+            --white: #ffffff;
+            --light-navy: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--white);
+            color: #333;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--navy-blue), var(--light-navy));
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--gold) !important;
+        }
+
+        .nav-link {
+            color: var(--white) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--gold) !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--navy-blue), var(--light-navy));
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            border: none;
+            color: var(--navy-blue);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(251, 191, 36, 0.4);
+            color: var(--navy-blue);
+        }
+
+        .section-title {
+            color: var(--navy-blue);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--gold);
+            margin: 1rem auto;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border-radius: 15px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--navy-blue), var(--light-navy));
+            color: var(--white);
+            border-radius: 15px 15px 0 0 !important;
+        }
+
+        .experience-icon {
+            background-color: var(--gold);
+            color: var(--navy-blue);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--navy-blue), var(--light-navy));
+            color: var(--white);
+            padding: 80px 0;
+        }
+
+        .contact-item {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            background-color: var(--gold);
+            color: var(--navy-blue);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid var(--gold);
+            margin-bottom: 2rem;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Gega Santana</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="hero-title">Gega Santana</h1>
+                    <p class="hero-subtitle">Technology Student</p>
+                    <p class="lead mb-4">Passionate about technology</p>
+                    <a href="#contact" class="btn btn-gold btn-lg">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <p class="lead text-center">
+                                I'm Gega Santana, a dedicated technology student at STTI (Sekolah Tinggi Teknologi
+                                Indonesia)
+                                with valuable real-world experience in the hospitality industry.
+                            </p>
+                            <p>
+                                I'm Gega Santana, a dedicated technology student at STTI (Sekolah Tinggi Teknologi
+                                Indonesia)
+                                passionate about learning and applying modern technology solutions.
+                            </p>
+                            <p>
+                                Currently pursuing my studies in technology, I'm developing skills in programming,
+                                software development, and innovative technological solutions. I'm excited about
+                                combining
+                                my academic knowledge with practical applications to create meaningful impact in the
+                                tech industry.
+                            </p>
+                            <p>
+                                I believe in continuous learning and staying updated with the latest technological
+                                trends.
+                                My goal is to contribute to projects that make a difference and help solve real-world
+                                problems
+                                through technology.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Education Section -->
+    <section id="education" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mb-0"><i class="fas fa-graduation-cap me-2"></i>Current Studies</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="experience-icon me-3">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-primary">STTI (Sekolah Tinggi Teknologi Indonesia)</h5>
+                                    <p class="text-muted mb-2">Technology Student - Currently Enrolled</p>
+                                    <p>
+                                        Pursuing comprehensive education in technology, developing skills in
+                                        programming,
+                                        software development, and modern technological solutions. Combining theoretical
+                                        knowledge with practical applications to prepare for the evolving tech industry.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Key Skills</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="experience-icon mx-auto">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h5>Programming</h5>
+                            <p>Developing skills in modern programming languages and software development</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="experience-icon mx-auto">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h5>Web Development</h5>
+                            <p>Learning HTML, CSS, JavaScript and modern web development frameworks</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="experience-icon mx-auto">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h5>Database Management</h5>
+                            <p>Understanding database design, SQL, and data management principles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title text-white">Get In Touch</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h5>Email</h5>
+                        <p>gegasantana73@email.com</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h5>Phone</h5>
+                        <p>+62 813-7151-4417</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="lead">Ready to bring my experience and growing tech skills to your team!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Gega Santana. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 70;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
